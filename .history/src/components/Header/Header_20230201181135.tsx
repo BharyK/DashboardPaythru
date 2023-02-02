@@ -1,0 +1,34 @@
+import { useState } from "react"
+
+
+const Header = () => {
+    const [show, setShow] = useState(true)
+
+    const handleShowBar = () => {
+        setShow(!show)
+    }
+
+    console.log("show", show)
+    return (
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <a className="navbar-brand" href="#">Navbar w/ text</a>
+            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation" onClick={handleShowBar}>
+                <span className="navbar-toggler-icon"></span>
+            </button>
+
+            <div className={show ? "collapse navbar-collapse" : ''} id="navbarText">
+                <ul className="navbar-nav mr-auto">
+                    <li className="nav-item active">
+                        <a className="nav-link" href="#"><span className="sr-only">(current)</span>Navbar text with an inline element</a>
+                    </li>
+                </ul>
+                <span className="navbar-text">
+                    Navbar text with an inline element
+                </span>
+            </div>
+
+        </nav>
+    )
+}
+
+export { Header }
